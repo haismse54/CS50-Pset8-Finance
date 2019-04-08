@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transfer history
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Cash amount</th>
+                <th>Card No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transfer in info %}
+                <tr>
+                    <td>{{ transfer["timedate"] }}</td>
+                    <td>{{ transfer["cash_change"] }}</td>
+                    <td>{{ transfer["card"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Balance
+{% endblock %}
+
+{% block main %}
+    <form action="/balance" method="post">
+        <legend><b>Balance</b></legend>
+        <div class="form-group">
+            <fieldset>
+            Method: <select autofocus class="form-control form-control-sm" name="method">
+                <option value="" selected disabled>Choose</option>
+                <option value="deposit">Deposit</option>
+                <option value="withdraw">Withdraw</option>
+                </select><br>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="card" placeholder="AMEX/VISA/MC card" type="number">
+            <input class="form-control" name="ccv" placeholder="ccv" type="number" min="100" max="999">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="cash" placeholder="Amount of cash" type="number">
+
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="currentPassword" placeholder="Current password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Make transaction</button>
+    </form>
+{% endblock %}

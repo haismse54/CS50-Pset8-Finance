@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <form action="/account" method="post">
+        <legend><b>Account information</b></legend>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="currentPassword" placeholder="Current password" type="password">
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <input class="form-control" name="newPassword" placeholder="New password" type="password"><br>
+                <input class="form-control" name="repeatNewPassword" placeholder="Repeat new password" type="password"><br>
+            </fieldset>
+        </div>
+        <button class="btn btn-primary" type="submit">Change</button>
+    </form>
+{% endblock %}
